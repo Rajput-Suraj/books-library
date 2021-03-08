@@ -1,15 +1,6 @@
-import React, { useState } from "react";
-import { gql } from "apollo-boost";
+import React from "react";
 import { graphql } from "react-apollo";
-
-const addAuthorsQuery = gql`
-    {
-        authors {
-            name
-            id
-        }
-    }
-`;
+import { getAuthorsQuery } from "../queries/queries";
 
 const displayAuthors = (props) => {
     let data = props.data;
@@ -44,4 +35,4 @@ const AddBook = (props) => {
     );
 };
 
-export default graphql(addAuthorsQuery)(AddBook);
+export default graphql(getAuthorsQuery)(AddBook);
